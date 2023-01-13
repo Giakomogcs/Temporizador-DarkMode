@@ -1,0 +1,150 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 62.5%;
+  --bg-main: #121214;
+  --bg-main-ligth: #E5E5E5;
+  --bg-button: rgba(66, 211, 255, 0.13);
+  --bg-controls: rgba(66, 211, 255, 0.13);
+  --tt-time: #FFFFFF;
+
+  --bg-card-primary: #29292E;
+
+  --base-color:240;
+  --bg-primary-fill: hsla(var(--base-color),7%, 78%, 1);
+  
+  --primary-color: hsla(var(--base-color),6%, 21%,1);
+
+  --bg-select-card: #0A3442;
+
+  --ballRange: #FFFFFF;
+  --lineRange: #FFFFFF;
+
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+
+  background-color: var(--bg-main);
+  color: var(--tt-time);
+  padding: 2rem;
+  
+  overflow: hidden;
+}
+
+main{
+  display: grid;
+
+  align-items: center;
+
+  height: 100vh;
+  gap: clamp(.5rem, 1rem + 3vw, 19.2rem);
+  grid-template-columns: 1fr 1fr;
+
+}
+
+button{
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+  transition: transform .3s;
+}
+
+button:hover{
+  transform: scale(1.1);
+}
+ 
+.hide{
+  display: none;
+}
+
+.play svg path,
+.pause svg path,
+.stop svg path,
+.mais svg path,
+.menos svg path,
+.set svg path,
+.arvore svg path,
+.fogo svg path,
+.nuvem svg path,
+.loja svg path{
+  fill: var(--bg-primary-fill);
+}
+
+button svg{
+  width: clamp(2.5rem, 3rem + 3vw, 4.8rem);
+}
+#temporizador{
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+
+#timer span{
+  font-weight: 500;
+  font-size: clamp(2rem, 6rem + 5vw, 12.6rem);
+
+}
+
+#controls{
+  margin-top: 1.7rem;
+  max-width: 31.2rem;
+  display: flex;
+  
+  gap: clamp(.5rem, 1rem + 1vw, 4rem);
+  
+}
+
+.temas{
+  max-width: 31rem;
+  max-height: 33.6rem;
+
+  display: grid;
+  gap: clamp(.2rem, 0.2rem + .5vw, 3.2rem);
+  grid-template-columns: .5fr .5fr;
+}
+
+.card{
+  background-color: var(--bg-card-primary);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(.2rem, 10rem + 20vh, 3.2rem);
+  
+  max-width: clamp(11rem, 4rem + 9vw, 13.8rem);
+  max-height: 15.2rem;
+
+  border-radius: 2.4rem;
+  padding: 2.4rem;
+}
+
+[type="range"]{
+
+  -webkit-appearance: none;
+  background-color: var(--lineRange);
+  border-radius:99rem;
+  height: 0.4rem;
+}
+
+.card input::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 99rem;
+  background-color: var(--ballRange);
+}
+
+.mode{
+  position: absolute;
+  top: clamp(1rem, 1rem + 1vw, 6.4rem);
+  right:clamp(1rem, 1rem + 1vw, 6.4rem);
+}
